@@ -12,6 +12,9 @@
 		D431C6B91C24372E00183DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D431C6B71C24372E00183DCA /* Main.storyboard */; };
 		D431C6BB1C24372E00183DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D431C6BA1C24372E00183DCA /* Assets.xcassets */; };
 		D431C6BE1C24372E00183DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D431C6BC1C24372E00183DCA /* LaunchScreen.storyboard */; };
+		D431C6C71C24386E00183DCA /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C51C24386E00183DCA /* launch.png */; settings = {ASSET_TAGS = (); }; };
+		D431C6C81C24386E00183DCA /* launchx2.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C61C24386E00183DCA /* launchx2.png */; settings = {ASSET_TAGS = (); }; };
+		D431C6CA1C2439F400183DCA /* logologin.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C91C2439F400183DCA /* logologin.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D431C6BA1C24372E00183DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D431C6BD1C24372E00183DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D431C6BF1C24372E00183DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D431C6C51C24386E00183DCA /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		D431C6C61C24386E00183DCA /* launchx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchx2.png; sourceTree = "<group>"; };
+		D431C6C91C2439F400183DCA /* logologin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logologin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				D431C6B71C24372E00183DCA /* Main.storyboard */,
 				D431C6BA1C24372E00183DCA /* Assets.xcassets */,
 				D431C6BC1C24372E00183DCA /* LaunchScreen.storyboard */,
+				D431C6C51C24386E00183DCA /* launch.png */,
+				D431C6C91C2439F400183DCA /* logologin.png */,
+				D431C6C61C24386E00183DCA /* launchx2.png */,
 				D431C6BF1C24372E00183DCA /* Info.plist */,
 			);
 			path = FeedbackApp;
@@ -121,8 +130,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D431C6CA1C2439F400183DCA /* logologin.png in Resources */,
+				D431C6C71C24386E00183DCA /* launch.png in Resources */,
 				D431C6BE1C24372E00183DCA /* LaunchScreen.storyboard in Resources */,
 				D431C6BB1C24372E00183DCA /* Assets.xcassets in Resources */,
+				D431C6C81C24386E00183DCA /* launchx2.png in Resources */,
 				D431C6B91C24372E00183DCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
