@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="622" y="286"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FeedbackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="FeedbackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -109,30 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logologin.png" translatesAutoresizingMaskIntoConstraints="NO" id="4WN-rj-bFs">
-                                <rect key="frame" x="200" y="58" width="200" height="128"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="IC9-Wa-LVH"/>
-                                    <constraint firstAttribute="height" constant="128" id="Kv0-qK-2TL"/>
-                                    <constraint firstAttribute="height" constant="128" id="N1G-3y-vxf"/>
-                                    <constraint firstAttribute="width" constant="200" id="QMt-vD-aoE"/>
-                                    <constraint firstAttribute="width" constant="200" id="S4w-gt-1LR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="WYV-in-hJK"/>
-                                    <constraint firstAttribute="width" constant="240" id="g8O-81-vQk"/>
-                                    <constraint firstAttribute="height" constant="128" id="hOu-fG-LoS"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IC9-Wa-LVH"/>
-                                        <exclude reference="Kv0-qK-2TL"/>
-                                        <exclude reference="N1G-3y-vxf"/>
-                                        <exclude reference="QMt-vD-aoE"/>
-                                        <exclude reference="WYV-in-hJK"/>
-                                        <exclude reference="g8O-81-vQk"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJS-fv-P1w">
                                 <rect key="frame" x="20" y="409" width="560" height="30"/>
                                 <animations/>
@@ -146,6 +122,9 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AV1-ZQ-qu2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-s6-Apg">
                                 <rect key="frame" x="20" y="520" width="560" height="30"/>
@@ -180,6 +159,30 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logologin.png" translatesAutoresizingMaskIntoConstraints="NO" id="4WN-rj-bFs">
+                                <rect key="frame" x="200" y="58" width="200" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="IC9-Wa-LVH"/>
+                                    <constraint firstAttribute="height" constant="128" id="Kv0-qK-2TL"/>
+                                    <constraint firstAttribute="height" constant="128" id="N1G-3y-vxf"/>
+                                    <constraint firstAttribute="width" constant="200" id="QMt-vD-aoE"/>
+                                    <constraint firstAttribute="width" constant="200" id="S4w-gt-1LR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="WYV-in-hJK"/>
+                                    <constraint firstAttribute="width" constant="240" id="g8O-81-vQk"/>
+                                    <constraint firstAttribute="height" constant="128" id="hOu-fG-LoS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IC9-Wa-LVH"/>
+                                        <exclude reference="Kv0-qK-2TL"/>
+                                        <exclude reference="N1G-3y-vxf"/>
+                                        <exclude reference="QMt-vD-aoE"/>
+                                        <exclude reference="WYV-in-hJK"/>
+                                        <exclude reference="g8O-81-vQk"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
@@ -251,6 +254,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="SJS-fv-P1w" id="915-MT-l4D"/>
+                        <outlet property="txtUsername" destination="h5m-NS-JJn" id="lCM-ob-N6m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

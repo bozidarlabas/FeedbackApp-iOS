@@ -9,7 +9,20 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    //View Properties
+    
+    @IBOutlet weak var txtUsername: UITextField!
 
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBAction func login(sender: UIButton) {
+        //Authentication
+        
+        
+    }
+    //LifeCycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +40,7 @@ class LoginViewController: UIViewController {
             print("segue")
         }
     }
-    
-
+ 
     /*
     // MARK: - Navigation
 
