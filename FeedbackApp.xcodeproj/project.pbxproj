@@ -15,6 +15,10 @@
 		D431C6C71C24386E00183DCA /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C51C24386E00183DCA /* launch.png */; settings = {ASSET_TAGS = (); }; };
 		D431C6C81C24386E00183DCA /* launchx2.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C61C24386E00183DCA /* launchx2.png */; settings = {ASSET_TAGS = (); }; };
 		D431C6CA1C2439F400183DCA /* logologin.png in Resources */ = {isa = PBXBuildFile; fileRef = D431C6C91C2439F400183DCA /* logologin.png */; settings = {ASSET_TAGS = (); }; };
+		D43B32291C25FEFB0035399D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43B32281C25FEFB0035399D /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D46A1E2C1C24A9D7007EC022 /* logoregister.png in Resources */ = {isa = PBXBuildFile; fileRef = D46A1E2B1C24A9D7007EC022 /* logoregister.png */; settings = {ASSET_TAGS = (); }; };
+		D46A1E2F1C24AC24007EC022 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A1E2E1C24AC24007EC022 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4CB3F221C259BD00070CB95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB3F211C259BD00070CB95 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		D431C6C51C24386E00183DCA /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		D431C6C61C24386E00183DCA /* launchx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchx2.png; sourceTree = "<group>"; };
 		D431C6C91C2439F400183DCA /* logologin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logologin.png; sourceTree = "<group>"; };
+		D43B32281C25FEFB0035399D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D46A1E2B1C24A9D7007EC022 /* logoregister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoregister.png; sourceTree = "<group>"; };
+		D46A1E2E1C24AC24007EC022 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D4CB3F211C259BD00070CB95 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +68,29 @@
 		D431C6B21C24372E00183DCA /* FeedbackApp */ = {
 			isa = PBXGroup;
 			children = (
+				D46A1E2D1C24ABF2007EC022 /* Controllers */,
 				D431C6B31C24372E00183DCA /* AppDelegate.swift */,
-				D431C6B51C24372E00183DCA /* ViewController.swift */,
 				D431C6B71C24372E00183DCA /* Main.storyboard */,
 				D431C6BA1C24372E00183DCA /* Assets.xcassets */,
 				D431C6BC1C24372E00183DCA /* LaunchScreen.storyboard */,
 				D431C6C51C24386E00183DCA /* launch.png */,
 				D431C6C91C2439F400183DCA /* logologin.png */,
+				D46A1E2B1C24A9D7007EC022 /* logoregister.png */,
 				D431C6C61C24386E00183DCA /* launchx2.png */,
 				D431C6BF1C24372E00183DCA /* Info.plist */,
 			);
 			path = FeedbackApp;
+			sourceTree = "<group>";
+		};
+		D46A1E2D1C24ABF2007EC022 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D431C6B51C24372E00183DCA /* ViewController.swift */,
+				D46A1E2E1C24AC24007EC022 /* RegisterViewController.swift */,
+				D4CB3F211C259BD00070CB95 /* LoginViewController.swift */,
+				D43B32281C25FEFB0035399D /* HomeViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D431C6CA1C2439F400183DCA /* logologin.png in Resources */,
+				D46A1E2C1C24A9D7007EC022 /* logoregister.png in Resources */,
 				D431C6C71C24386E00183DCA /* launch.png in Resources */,
 				D431C6BE1C24372E00183DCA /* LaunchScreen.storyboard in Resources */,
 				D431C6BB1C24372E00183DCA /* Assets.xcassets in Resources */,
@@ -146,6 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43B32291C25FEFB0035399D /* HomeViewController.swift in Sources */,
+				D4CB3F221C259BD00070CB95 /* LoginViewController.swift in Sources */,
+				D46A1E2F1C24AC24007EC022 /* RegisterViewController.swift in Sources */,
 				D431C6B61C24372E00183DCA /* ViewController.swift in Sources */,
 				D431C6B41C24372E00183DCA /* AppDelegate.swift in Sources */,
 			);
@@ -297,6 +321,7 @@
 				D431C6C41C24372E00183DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
