@@ -13,6 +13,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtCountry: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
