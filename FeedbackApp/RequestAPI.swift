@@ -20,13 +20,13 @@ class RequestAPI{
         return _sharedInstance
     }
     
-    func register(){
+    func register(username: String, password: String, email: String, city: String, country: String, withSuccess: ((JSON)->Void)){
         let parameters = [
-            "email": "bozidar.labas233@hotmail.com",
-            "username": "bosko",
-            "password": "12345678",
-            "city": "Kutina",
-            "country": "Croatia",
+            "email": email,
+            "username": username,
+            "password": password,
+            "city": city,
+            "country": country,
             "gender": "m",
             "birthDate": "13.12.1992",
             "registration": "registration"
@@ -36,13 +36,17 @@ class RequestAPI{
             .responseJSON(completionHandler: { response in
             switch response.result{
             case .Success:
-                print("success")
+                if let value = response.result.value{
+                    let json = JSON(value)
+                    withSuccess(json)
+                }
+                
             case .Failure:
                 print("error")
             }
         })
     }
-    
+
     
 }
 

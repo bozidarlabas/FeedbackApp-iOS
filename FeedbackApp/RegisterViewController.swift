@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var txtCountry: UITextField!
     @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtCountry: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,14 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func register(sender: AnyObject) {
-        var username: String = txtUsername.text!
-        var password: String = txtPassword.text!
+        let username: String = txtUsername.text!
+        let password: String = txtPassword.text!
+        let email: String = txtEmail.text!
+        let city: String = txtCity.text!
+        let country: String = txtCountry.text!
         
         if validate(username, password: password){
-            sendRegistrationRequest(username, password: password)
+            sendRegistrationRequest(username, password: password, email: email, city: city, country: country)
         }
         
         
@@ -41,21 +45,31 @@ class RegisterViewController: UIViewController {
     
     func validate(username: NSString, password: NSString)->Bool{
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
-            let alertView:UIAlertView = UIAlertView()
-            alertView.title = "Sign Up Failed!"
-            alertView.message = "Please enter Username and Password"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
+            CustomAlertView.showAlertView("Sign Up Failed!", message: "Please enter Username and Password", buttonTitle: "OK")
             return false
         }
         return true
     }
     
-    func sendRegistrationRequest(username: NSString, password: NSString){
-        RequestAPI.sharedInstance.register()
-        
+    func sendRegistrationRequest(username: String, password: String, email: String, city: String, country: String){
+        RequestAPI.sharedInstance.register(username, password: password, email: email, city: city, country: country, withSuccess: onSuccessRegister)
     }
+    
+    
+    func onSuccessRegister(json: JSON)->Void{
+        if json == "success"{
+            print("Registriran: \(json)")
+            let alertView: UIAlertView =  CustomAlertView.showAlertView("Successful registration!", message: "You are registered as \(txtUsername.text!)", buttonTitle: "OK")
+            alertView.delegate = self
+        }else{
+            CustomAlertView.showAlertView("Sign Up Failed!", message: "\(json)", buttonTitle: "OK")
+        }
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     @IBAction func back(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

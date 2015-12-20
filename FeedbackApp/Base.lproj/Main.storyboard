@@ -469,6 +469,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="txtCity" destination="Jwc-qK-ZPH" id="v5s-0m-Cv0"/>
+                        <outlet property="txtCountry" destination="2m2-Fk-Wer" id="Gfk-oo-p88"/>
                         <outlet property="txtEmail" destination="J63-47-4dv" id="qXU-Ix-EPV"/>
                         <outlet property="txtPassword" destination="HeE-1a-nJd" id="Lr0-cj-dps"/>
                         <outlet property="txtUsername" destination="Xzp-Ua-Ghd" id="GAs-Rn-KpX"/>
