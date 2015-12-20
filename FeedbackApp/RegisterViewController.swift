@@ -10,6 +10,10 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,38 @@ class RegisterViewController: UIViewController {
     }
     
 
+    @IBAction func register(sender: AnyObject) {
+        var username: String = txtUsername.text!
+        var password: String = txtPassword.text!
+        
+        if validate(username, password: password){
+            sendRegistrationRequest(username, password: password)
+        }
+        
+        
+    }
+    
+    func validate(username: NSString, password: NSString)->Bool{
+        if ( username.isEqualToString("") || password.isEqualToString("") ) {
+            let alertView:UIAlertView = UIAlertView()
+            alertView.title = "Sign Up Failed!"
+            alertView.message = "Please enter Username and Password"
+            alertView.delegate = self
+            alertView.addButtonWithTitle("OK")
+            alertView.show()
+            return false
+        }
+        return true
+    }
+    
+    func sendRegistrationRequest(username: NSString, password: NSString){
+        RequestAPI.sharedInstance.register()
+        
+    }
+    
+    @IBAction func back(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

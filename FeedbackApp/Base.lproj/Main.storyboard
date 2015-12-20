@@ -21,14 +21,14 @@
                                 <rect key="frame" x="20" y="129" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-W0-IgX">
                                 <rect key="frame" x="20" y="158" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBJ-60-33I">
@@ -283,21 +283,34 @@
                                     <constraint firstAttribute="width" constant="240" id="B2V-eB-6rg"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzp-Ua-Ghd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzp-Ua-Ghd">
                                 <rect key="frame" x="20" y="238" width="560" height="30"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" hint="Username"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="EuI-yT-tfv"/>
+                                    <constraint firstAttribute="height" constant="30" id="ipo-Dy-JgS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J63-47-4dv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J63-47-4dv">
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="I72-Z7-Qif"/>
+                                    <constraint firstAttribute="height" constant="30" id="hG5-Kg-mN2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HeE-1a-nJd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HeE-1a-nJd">
                                 <rect key="frame" x="20" y="332" width="560" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jja-O7-NW6"/>
+                                    <constraint firstAttribute="width" constant="560" id="mlJ-4I-gwR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -310,9 +323,32 @@
                                 <rect key="frame" x="20" y="413" width="560" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.46274509803921571" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="0Ay-n3-tXN"/>
+                                    <constraint firstAttribute="height" constant="30" id="WOf-di-Qza"/>
+                                </constraints>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="register:" destination="GAf-2S-2vw" eventType="touchUpInside" id="YcR-OP-9eD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWB-rK-dqE">
+                                <rect key="frame" x="20" y="451" width="560" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.46274509800000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="4MT-ZF-jsp"/>
+                                    <constraint firstAttribute="height" constant="30" id="Qgh-Gr-T1s"/>
+                                </constraints>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="GAf-2S-2vw" eventType="touchUpInside" id="AK3-Ab-hda"/>
+                                    <action selector="register:" destination="GAf-2S-2vw" eventType="touchUpInside" id="jB7-Ij-iXB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -321,9 +357,12 @@
                             <constraint firstItem="Xzp-Ua-Ghd" firstAttribute="top" secondItem="JUi-it-AcX" secondAttribute="bottom" constant="72" id="0YA-f7-TbC"/>
                             <constraint firstItem="JUi-it-AcX" firstAttribute="top" secondItem="Ajc-IP-A9F" secondAttribute="bottom" constant="18" id="0c4-l5-jVz"/>
                             <constraint firstItem="HeE-1a-nJd" firstAttribute="trailing" secondItem="J63-47-4dv" secondAttribute="trailing" id="0cy-dr-uWL"/>
+                            <constraint firstItem="MWB-rK-dqE" firstAttribute="top" secondItem="6dH-tE-X05" secondAttribute="bottom" constant="8" id="1Bq-qq-JlA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="MWB-rK-dqE" secondAttribute="leading" id="BoO-jA-BBQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J63-47-4dv" secondAttribute="trailing" id="FrJ-1G-Ggi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xzp-Ua-Ghd" secondAttribute="leading" id="Iyg-Dh-nDg"/>
                             <constraint firstItem="6dH-tE-X05" firstAttribute="top" secondItem="HeE-1a-nJd" secondAttribute="bottom" constant="51" id="OCb-Eb-nec"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MWB-rK-dqE" secondAttribute="trailing" id="Py5-Z5-asr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xzp-Ua-Ghd" secondAttribute="trailing" id="Uee-ID-DTu"/>
                             <constraint firstItem="HeE-1a-nJd" firstAttribute="top" secondItem="J63-47-4dv" secondAttribute="bottom" constant="17" id="ZAN-yW-ouv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="J63-47-4dv" secondAttribute="leading" id="ZNX-Mn-jrj"/>
@@ -333,8 +372,19 @@
                             <constraint firstAttribute="trailingMargin" secondItem="JUi-it-AcX" secondAttribute="trailing" constant="8" id="xCD-QT-yqx"/>
                             <constraint firstItem="JUi-it-AcX" firstAttribute="leading" secondItem="roE-IM-mr3" secondAttribute="leadingMargin" constant="32" id="xPp-dw-3U2"/>
                             <constraint firstItem="6dH-tE-X05" firstAttribute="leading" secondItem="HeE-1a-nJd" secondAttribute="leading" id="z0W-bY-Qra"/>
+                            <constraint firstItem="1zX-mF-c8h" firstAttribute="top" secondItem="MWB-rK-dqE" secondAttribute="bottom" constant="119" id="zAq-rO-hzb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xCD-QT-yqx"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="J63-47-4dv" id="qXU-Ix-EPV"/>
+                        <outlet property="txtPassword" destination="HeE-1a-nJd" id="Lr0-cj-dps"/>
+                        <outlet property="txtUsername" destination="Xzp-Ua-Ghd" id="GAs-Rn-KpX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fem-8d-jU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

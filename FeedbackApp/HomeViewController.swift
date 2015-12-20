@@ -36,7 +36,16 @@ class HomeViewController: UIViewController {
     
     //When home screen is loaded move to login screen
     override func viewDidAppear(animated: Bool) {
-        self.performSegueWithIdentifier("goToLogin", sender: self)
+        super.viewDidAppear(animated)
+        
+        let prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let isLoggedIn: Int = prefs.integerForKey(Constants.KEY_USER_LOGGED) as Int
+        
+        if isLoggedIn != 1{
+            self.performSegueWithIdentifier("goToLogin", sender: self)
+        }else{
+            self.usernameLabel.text = prefs.valueForKey(Constants.KEY_USERNAME) as! NSString as String
+        }
     }
 
     @IBAction func logout(sender: UIButton) {
