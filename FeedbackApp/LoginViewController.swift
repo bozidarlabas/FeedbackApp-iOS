@@ -18,7 +18,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: UIButton) {
         //Authentication
-        
+        let homeController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController")
+        self.presentViewController(homeController!, animated: true, completion: nil)
         
     }
     //LifeCycle methods
