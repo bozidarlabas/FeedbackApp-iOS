@@ -10,12 +10,22 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var navButton1: UIButton!
+    @IBOutlet weak var navButton2: UIButton!
+    @IBOutlet weak var scrollViewContent: UIView!
+    @IBOutlet weak var scrollViewController: UIScrollView!
+    @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
+    let numberOfScreens: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.scrollViewWidth.constant = self.view.frame.size.width * numberOfScreens
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        setControllers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,32 +33,19 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setControllers(){
+        let width = self.view.frame.size.width
+        let allProjectsController: AllProjectsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AllProjects") as! AllProjectsTableViewController
+        allProjectsController.view.frame = CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height)
+        
+        self.addChildViewController(allProjectsController)
+        self.scrollViewContent.addSubview(allProjectsController.view)
+        
+        
     }
-    */
-    
-    //When home screen is loaded move to login screen
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        let prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-//        let isLoggedIn: Int = prefs.integerForKey(Constants.KEY_USER_LOGGED) as Int
-//        
-//        if isLoggedIn != 1{
-//            self.performSegueWithIdentifier("goToLogin", sender: self)
-//        }else{
-//            self.usernameLabel.text = prefs.valueForKey(Constants.KEY_USERNAME) as! NSString as String
-//        }
+
+  
+//    @IBAction func logout(sender: UIButton) {
+//        self.performSegueWithIdentifier("goToLogin", sender: self)
 //    }
-
-    @IBAction func logout(sender: UIButton) {
-        self.performSegueWithIdentifier("goToLogin", sender: self)
-    }
 }
