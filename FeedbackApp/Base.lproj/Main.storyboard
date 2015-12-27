@@ -462,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqQ-GY-c8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="815"/>
+            <point key="canvasLocation" x="815" y="815"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -852,7 +852,7 @@
         <scene sceneID="VPi-1c-V9p">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYg-fZ-WfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t1j-RT-WnY" customClass="CustomNavigationController" customModule="FeedbackApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavHomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="t1j-RT-WnY" customClass="CustomNavigationController" customModule="FeedbackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M9s-oa-Yv6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
