@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllProjectsListCell: UITableViewCell {
+class ProjectsListCell: UITableViewCell {
 
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var confirmImage: UIImageView!

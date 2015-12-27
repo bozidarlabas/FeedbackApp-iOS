@@ -1,54 +1,50 @@
 //
-//  AllProjectsTableViewController.swift
+//  MyProjectsTableViewController.swift
 //  FeedbackApp
 //
-//  Created by Bozidar on 24.12.2015..
+//  Created by Bozidar on 26.12.2015..
 //  Copyright © 2015. Bozidar. All rights reserved.
 //
 
 import UIKit
 import SwiftyJSON
 
-class AllProjectsTableViewController: UITableViewController {
+class MyProjectsTableViewController: UITableViewController {
     
-    
-    var allProjects: JSON = nil
+    var myProjects: JSON = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAllProjects()
-//        tableView.estimatedRowHeight = tableView.rowHeight  //estimated height defined in storyboard
-//        tableView.rowHeight = UITableViewAutomaticDimension  //calculate dimensions od row
+        getMyProjects()
     }
     
-    func getAllProjects(){
-        let user = getLogedUser()
-        print("username: \(user.getUsername())")
-        
-        RequestAPI.sharedInstance.fetchAllProjects(user.getUsername(), withSuccess: onAllProjectsFetched)
+    func getMyProjects(){
+        let username = getLogedUser().getUsername()
+        RequestAPI.sharedInstance.fetchMyProjects(username, withSuccess: onMyProjectsFetched)
     }
     
-    func onAllProjectsFetched(json: JSON)->Void{
-        self.allProjects = json
+    func onMyProjectsFetched(json: JSON)->Void{
+        self.myProjects = json
+        print("MY: \(myProjects)")
         self.tableView.reloadData()
-        print("velicina: \(allProjects.count)")
-        print("\(allProjects)")
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allProjects.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("allProjectsCell", forIndexPath: indexPath) as! ProjectsListCell
-        cell.labelProjecName.text = allProjects[indexPath.row]["name"].string
-        return cell
     }
     
     func getLogedUser()->User{
         let preferenceManager: PreferencesManager = PreferencesManager()
         let user: User = preferenceManager.loadUser()
         return user
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myProjects.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myProjectsCell", forIndexPath: indexPath) as! ProjectsListCell
+        let test = myProjects[indexPath.row]["name"].string
+        print("lala: \(test)")
+        cell.labelProjecName.text = myProjects[indexPath.row]["name"].string
+        return cell
     }
 
     /*

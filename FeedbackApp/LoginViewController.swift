@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
@@ -18,9 +19,41 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: UIButton) {
         //Authentication
-        let homeController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController")
-        self.presentViewController(homeController!, animated: true, completion: nil)
+        RequestAPI.sharedInstance.login(txtUsername.text!, password: txtPassword.text!, withSuccess: onSuccesslogin)
         
+        
+    }
+    
+    func onSuccesslogin(json: JSON)->Void{
+        if json == "success"{
+            storeLogedUser()
+            setUpMMDrawerController()
+            //goToHomeScreen()
+        }else{
+            //Show dialog with error message
+            CustomAlertView.showAlertView("Login failed!", message: "Wrong username or password", buttonTitle: "OK")
+        }
+    }
+    
+    func setUpMMDrawerController(){
+        let drawerManager = DrawerManager()
+        drawerManager.initializeControllers(self.storyboard!)
+        drawerManager.setUpDrawer()
+        
+        self.presentViewController(drawerManager.getDrawerController(), animated: true, completion: nil)
+    }
+    
+    func storeLogedUser(){
+        let preferenceManager: PreferencesManager = PreferencesManager()
+        preferenceManager.storeUser(txtUsername.text!)
+    }
+    
+    
+    func goToHomeScreen(){
+//        let homeController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController")
+//        self.presentViewController(homeController!, animated: true, completion: nil)
+        
+
     }
     //LifeCycle methods
     
