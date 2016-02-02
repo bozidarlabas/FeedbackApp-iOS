@@ -489,9 +489,6 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AV1-ZQ-qu2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-s6-Apg">
                                 <rect key="frame" x="20" y="520" width="560" height="30"/>
@@ -623,6 +620,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aQc-Px-lA5"/>
                     <connections>
+                        <outlet property="loginBtn" destination="8HS-Ip-LvM" id="Cb3-2Y-x3o"/>
                         <outlet property="txtPassword" destination="SJS-fv-P1w" id="915-MT-l4D"/>
                         <outlet property="txtUsername" destination="h5m-NS-JJn" id="lCM-ob-N6m"/>
                     </connections>
@@ -851,7 +849,6 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="VPi-1c-V9p">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IYg-fZ-WfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavHomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="t1j-RT-WnY" customClass="CustomNavigationController" customModule="FeedbackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M9s-oa-Yv6">
@@ -864,6 +861,7 @@
                         <segue destination="43a-Co-BUA" kind="relationship" relationship="rootViewController" id="wOY-Sa-eKK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYg-fZ-WfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="520" y="1653"/>
         </scene>

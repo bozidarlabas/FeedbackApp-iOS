@@ -7,29 +7,30 @@
 //
 
 import Foundation
+import SwiftyJSON
+
+typealias ProjectModel = (status: String?, idProjects: String?, name: String?, description: String?, rating: Int?)
 
 class Project{
     
-    private var id = Int()
-    private var name = String()
-    private var rating = String()
+    var projectsModel = [ProjectModel]()
     
-    init(id: Int, name: String, rating: String){
-        self.id = id
-        self.name = name
-        self.rating = rating
-    }
     
-    func getId()->Int{
-        return self.id
-    }
-    
-    func getName()->String{
-        return self.name
-    }
-    
-    func getRating()->String{
-        return rating
+    init(jsonObject: JSON){
+        
+        if let projectsArray = jsonObject.array{
+            for item in projectsArray{
+                let projectItem = (
+                    status: item["status"].string,
+                    idProjects: item["idProjects"].string,
+                    name: item["name"].string,
+                    description: item["description"].string,
+                    rating: item["rating"].int
+                )
+                projectsModel.append(projectItem)
+            }
+            
+        }
     }
     
 }

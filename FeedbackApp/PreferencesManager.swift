@@ -20,11 +20,10 @@ class PreferencesManager{
         preferences.setObject(username, forKey: UserKeys.USERNAME)
         preferences.synchronize()    }
     
-    func loadUser()->User{
+    func loadUser()->String{
         let preferences = NSUserDefaults.standardUserDefaults()
         let username = preferences.objectForKey(UserKeys.USERNAME) as! String
-        let user: User = User(username: username)
-        return user
+        return username
     }
 }
 

@@ -9,12 +9,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MMDrawerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxAlamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxBlocking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E58D6102897875E1C6DDA5D825838BC</key>
+		<key>175892047F5D57D69AC9D102FB92A2F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FF16F20157D341BB48C0632E25322C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>706FD66F903BBD040A5DBE96AA2A3816</key>
+		<key>57F86AAF78FC1686C16F06E9539017B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6313D8966F522D02E4866E8C2DF31366</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DD69BF347D720812784A09D8774E383</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>96D3562E47E4792B0A6093A0323EB398</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B32CEAD694AC845E46EDCDBAACCF2C4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E351F8BDDE7C83C1F16F53CBCB8EB89F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

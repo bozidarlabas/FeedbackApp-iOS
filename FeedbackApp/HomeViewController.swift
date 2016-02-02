@@ -11,31 +11,31 @@ import MMDrawerController
 
 class HomeViewController: UIViewController {
 
+    //OUTLETS
     @IBOutlet weak var navButton1: UIButton!
     @IBOutlet weak var navButton2: UIButton!
     @IBOutlet weak var scrollViewContent: UIView!
     @IBOutlet weak var scrollViewController: UIScrollView!
     @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
-    let numberOfScreens: CGFloat = 2
     @IBOutlet weak var drawerContainer: UINavigationItem!
+    
+    //PROPERTIES
+    let numberOfScreens: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initUI()
+    }
+    
+    func initUI(){
         self.scrollViewWidth.constant = self.view.frame.size.width * numberOfScreens
         UINavigationBar.appearance().barTintColor = UIColor.redColor()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        setControllers()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setTabControllers()
     }
     
     @IBAction func showAllProjects() {
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         scrollViewController.setContentOffset(CGPoint(x: self.view.frame.size.width, y: 0), animated: true)
     }
     
-    func setControllers(){
+    func setTabControllers(){
         let width = self.view.frame.size.width
         let allProjectsController: AllProjectsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AllProjects") as! AllProjectsTableViewController
         let myProjectsController: MyProjectsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyProjects") as! MyProjectsTableViewController
@@ -58,15 +58,9 @@ class HomeViewController: UIViewController {
         
         self.scrollViewContent.addSubview(allProjectsController.view)
         self.scrollViewContent.addSubview(myProjectsController.view)
-        
-        
     }
 
     @IBAction func openDrawer(sender: UIBarButtonItem) {
         self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
-  
-//    @IBAction func logout(sender: UIButton) {
-//        self.performSegueWithIdentifier("goToLogin", sender: self)
-//    }
 }

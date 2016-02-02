@@ -8,6 +8,9 @@
 
 import Foundation
 import Alamofire
+import RxAlamofire
+import RxCocoa
+import RxSwift
 import SwiftyJSON
 
 private let _sharedInstance = RequestAPI()
@@ -18,6 +21,18 @@ class RequestAPI{
     
     class var sharedInstance: RequestAPI{
         return _sharedInstance
+    }
+    
+    var errorAlertController = PublishSubject<UIAlertController>()
+    var disposeBag = DisposeBag()
+    
+    //Constants
+    struct Constants {
+        static let ENDPOINT: String = "http://arka.foi.hr"
+        static let REGISTER: String = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/registration.php"
+        static let LOGIN: String = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/login.php"
+        static let FETCH_ALL_PROJECTS = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
+        static let FETCH_MY_PROJECTS = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
     }
     
     func register(username: String, password: String, email: String, city: String, country: String, withSuccess: ((JSON)->Void)){
@@ -34,18 +49,20 @@ class RequestAPI{
         
         Alamofire.request(.POST, Constants.REGISTER, parameters: parameters)
             .responseJSON(completionHandler: { response in
-            switch response.result{
-            case .Success:
-                if let value = response.result.value{
-                    let json = JSON(value)
-                    withSuccess(json)
+                switch response.result{
+                case .Success:
+                    if let value = response.result.value{
+                        let json = JSON(value)
+                        withSuccess(json)
+                    }
+                    
+                case .Failure:
+                    print("error")
                 }
-                
-            case .Failure:
-                print("error")
-            }
-        })
+            })
     }
+    
+    //MARK: Login
     
     func login(username: String, password: String, withSuccess: ((JSON)->Void)){
         let parameters = [
@@ -53,18 +70,30 @@ class RequestAPI{
             "username": username
         ]
         
-        Alamofire.request(.POST, Constants.LOGIN, parameters: parameters)
-            .responseJSON(completionHandler: {response in
-                switch response.result{
-                case .Success:
-                    if let value = response.result.value{
-                        let json = JSON(value)
-                        withSuccess(json)
+        Alamofire.request(Method.POST, Constants.LOGIN, parameters: parameters).rx_responseJSON()
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: {(r, json) -> Void in
+                    let jsonForValidation = JSON(json)
+                    
+                    if let error = jsonForValidation["message"].string{
+                        print("error: \(error)")
+                        self.postError("Error", message: error)
+                        return
                     }
-                case .Failure:
-                    print("error")
-                }})
+                    withSuccess(jsonForValidation)
+                },
+                onError: {error in
+                    print("Error")
+                    let gotError = error as NSError
+                    print(gotError.domain)
+                    print(gotError.code)
+                    self.postError("\(gotError.code)", message: gotError.domain)}
+            )
+            .addDisposableTo(disposeBag)
     }
+    
+    //MARK: All Projects
     
     func fetchAllProjects(username: String, withSuccess: ((JSON)->Void))->Void{
         let parameters = [
@@ -72,17 +101,28 @@ class RequestAPI{
             "username": username
         ]
         
-        Alamofire.request(.POST, Constants.FETCH_ALL_PROJECTS, parameters: parameters)
-            .responseJSON(completionHandler: { response in
-                switch response.result{
-                case .Success:
-                    if let value = response.result.value{
-                        let json = JSON(value)
-                        withSuccess(json)
+        Alamofire.request(.POST, Constants.FETCH_ALL_PROJECTS, parameters: parameters).rx_responseJSON()
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: {(r,json) -> Void in
+                    let jsonResponse = JSON(json)
+                    
+                    if let error = jsonResponse["message"].string{
+                        print("error: \(error)")
+                        self.postError("Error", message: error)
+                        return
                     }
-                case .Failure:
+                    withSuccess(jsonResponse)
+                },
+                onError: {error in
                     print("Error")
-                }})
+                    let gotError = error as NSError
+                    print(gotError.domain)
+                    print(gotError.code)
+                    self.postError("\(gotError.code)", message: gotError.domain)}
+                
+            ).addDisposableTo(disposeBag)
+        
     }
     
     func fetchMyProjects(username: String, withSuccess: ((JSON)->Void)){
@@ -91,26 +131,38 @@ class RequestAPI{
             "username": username
         ]
         
-        Alamofire.request(.POST, Constants.FETCH_MY_PROJECTS, parameters: parameters)
-        .responseJSON(completionHandler: {
-            response in
-            switch response.result{
-            case .Success:
-                if let value = response.result.value{
-                    let json = JSON(value)
-                    withSuccess(json)
-                }
-            case .Failure:
-                print("Error")
-            }
-        })
+        Alamofire.request(.POST, Constants.FETCH_MY_PROJECTS, parameters: parameters).rx_responseJSON()
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: {(r,json) -> Void in
+                    let jsonResponse = JSON(json)
+                    
+                    if let error = jsonResponse["message"].string{
+                        print("error: \(error)")
+                        self.postError("Error", message: error)
+                        return
+                    }
+                    withSuccess(jsonResponse)
+                },
+                onError: {error in
+                    print("Error")
+                    let gotError = error as NSError
+                    print(gotError.domain)
+                    print(gotError.code)
+                    self.postError("\(gotError.code)", message: gotError.domain)}
+                
+            ).addDisposableTo(disposeBag)
+        
     }
-//    
-//    @POST("/WebDiP/2013_projekti/WebDiP2013_038/projects.php")
-//    public void fetchMyrojects(
-//    @Field("myprojects") String allProjects,
-//    @Field("username") String username,
-//    Callback<List<ProjectModel>> projects);
-
+    
+    //.on(event: Event<Element>)
+    func postError(title: String, message: String){
+        errorAlertController.on(
+            .Next(UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .Alert)))
+    }
+    
     
 }

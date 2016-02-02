@@ -10,29 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedbackApp/AllProjectsTableViewController.swift"
-            timestampString = "472819030.418084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FeedbackApp/AllProjectsTableViewController.swift"
             timestampString = "472773392.391076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "AllProjectsTableViewController"
-            landmarkType = "3">
+            endingLineNumber = "12">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -89,12 +71,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedbackApp/HomeViewController.swift"
-            timestampString = "472902055.059275"
+            timestampString = "476130363.999153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "setControllers()"
+            landmarkName = "setTabControllers()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -120,13 +102,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FeedbackApp/MyProjectsTableViewController.swift"
-            timestampString = "472819790.466783"
+            filePath = "FeedbackApp/AppDelegate.swift"
+            timestampString = "472903056.591848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "onMyProjectsFetched(_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,13 +118,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FeedbackApp/AppDelegate.swift"
-            timestampString = "472903056.591848"
+            filePath = "FeedbackApp/LoginViewModel.swift"
+            timestampString = "476053248.491992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "LoginViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FeedbackApp.LoginViewModel.credentialsValid.getter : RxSwift.Observable&lt;Swift.Bool&gt;"
+                  moduleName = "FeedbackApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Workspaces/IOS/FeedbackApp-iOS/FeedbackApp/LoginViewModel.swift"
+                  timestampString = "476057180.583326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FeedbackApp.LoginViewModel.credentialsValid.setter : RxSwift.Observable&lt;Swift.Bool&gt;"
+                  moduleName = "FeedbackApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Workspaces/IOS/FeedbackApp-iOS/FeedbackApp/LoginViewModel.swift"
+                  timestampString = "476057180.583601"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FeedbackApp.LoginViewModel.credentialsValid.materializeForSet : RxSwift.Observable&lt;Swift.Bool&gt;"
+                  moduleName = "FeedbackApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Workspaces/IOS/FeedbackApp-iOS/FeedbackApp/LoginViewModel.swift"
+                  timestampString = "476057180.58371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FeedbackApp/AllProjectsTableViewController.swift"
+            timestampString = "476136129.824286"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
