@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D85F526A3125A3EFECCEBF1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EB01691F6D459ED5DBA1B3 /* Pods.framework */; };
+		D40142981C64D0BC00ADAD5A /* RegistrationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40142971C64D0BC00ADAD5A /* RegistrationViewModelTest.swift */; settings = {ASSET_TAGS = (); }; };
 		D4045F281C6128AD00C6206B /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4045F271C6128AD00C6206B /* ProjectsViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		D4118AD91C2733720052A389 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4118AD81C2733720052A389 /* CustomAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		D417D2D11C2C5C310047A159 /* bluecheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = D417D2D01C2C5C310047A159 /* bluecheckmark.png */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		B0E578356713C98B563A6938 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D40142971C64D0BC00ADAD5A /* RegistrationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelTest.swift; sourceTree = "<group>"; };
 		D4045F271C6128AD00C6206B /* ProjectsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		D4118AD81C2733720052A389 /* CustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		D417D2D01C2C5C310047A159 /* bluecheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluecheckmark.png; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				D47622251C6245F0008EEF42 /* Info.plist */,
 				D4F745A71C64AD860077F3D0 /* LoginViewModelTest.swift */,
+				D40142971C64D0BC00ADAD5A /* RegistrationViewModelTest.swift */,
 			);
 			path = FeedbackAppTests;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F745A81C64AD860077F3D0 /* LoginViewModelTest.swift in Sources */,
+				D40142981C64D0BC00ADAD5A /* RegistrationViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

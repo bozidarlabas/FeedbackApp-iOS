@@ -25,36 +25,32 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewModel = RegisterViewModel(username: txtUsername.rx_text.asObservable(), password: txtPassword.rx_text.asObservable(), email: txtEmail.rx_text.asObservable())
+        let viewModel = RegisterViewModel()
+        viewModel.validate(txtUsername.rx_text.asObservable(), password: txtPassword.rx_text.asObservable(), email: txtEmail.rx_text.asObservable())
         
         
         btnRegister.rx_tap
-            .withLatestFrom(viewModel.credentialsValid)
+            .withLatestFrom(viewModel.credentialsValid!)
             .subscribeNext{
                 self.onValidationFinished($0, viewModel: viewModel)
             }.addDisposableTo(disposeBag)
         
-        viewModel.userRegistered
-        .subscribeNext{registrationSuccessful in
-            self.onRegistrationFinished(registrationSuccessful!)
-        }.addDisposableTo(disposeBag)
-        
     }
     
-    func onValidationFinished(isValidated: Bool, viewModel: RegisterViewModel){
-        if(isValidated){
-            viewModel.register(txtUsername.text!, email: txtEmail.text!, password: txtPassword.text!, city: txtCity.text!, country: txtCountry.text!)
-        }else{
-            CustomAlertView.showAlertView("Failed validation!", message: "incorect username, password or email format", buttonTitle: "OK")
-        }
-    }
-    
-    func onRegistrationFinished(regitered: Bool){
-        if (regitered){
+    func onRegistrationFinished(json: JSON) -> Void{
+        if json == "success"{
             let alertView: UIAlertView =  CustomAlertView.showAlertView("Successful registration!", message: "You are registered as \(txtUsername.text!)", buttonTitle: "OK")
             alertView.delegate = self
         }else{
             CustomAlertView.showAlertView("Sign Up Failed!", message: "Error", buttonTitle: "OK")
+        }
+    }
+    
+    func onValidationFinished(isValidated: Bool, viewModel: RegisterViewModel){
+        if(isValidated){
+            viewModel.register(txtUsername.text!, email: txtEmail.text!, password: txtPassword.text!, city: txtCity.text!, country: txtCountry.text!, onRegistrationFinished: onRegistrationFinished)
+        }else{
+            CustomAlertView.showAlertView("Failed validation!", message: "incorect username, password or email format", buttonTitle: "OK")
         }
     }
     

@@ -34,7 +34,6 @@ class LoginViewModelTest: XCTestCase {
         viewModel.credentialsValid?.subscribeNext{ valid in
             XCTAssertTrue(valid)
         }.addDisposableTo(disposable)
-        
     }
 
     func testLogin(){
