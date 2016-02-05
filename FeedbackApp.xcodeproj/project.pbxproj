@@ -28,13 +28,33 @@
 		D46B7A021C2EAFDB008825D0 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D46B7A011C2EAFDB008825D0 /* logo.png */; settings = {ASSET_TAGS = (); }; };
 		D46B7A041C2EB103008825D0 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B7A031C2EB103008825D0 /* DrawerController.swift */; settings = {ASSET_TAGS = (); }; };
 		D46B7A061C2EB935008825D0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B7A051C2EB935008825D0 /* CustomNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
+		D476220C1C620EEE008EEF42 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476220B1C620EEE008EEF42 /* RegisterViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		D49C7BB61C2DD04E00F55387 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C7BB51C2DD04E00F55387 /* PreferencesManager.swift */; settings = {ASSET_TAGS = (); }; };
 		D49C7BB81C2DF13200F55387 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49C7BB71C2DF13200F55387 /* Project.swift */; settings = {ASSET_TAGS = (); }; };
 		D4B323E71C5FE99900E33882 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B323E61C5FE99900E33882 /* LoginViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		D4B540B71C2FEA7F0005C6CF /* DrawerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B540B61C2FEA7F0005C6CF /* DrawerManager.swift */; settings = {ASSET_TAGS = (); }; };
 		D4B542861C26E118000ECDFB /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B542851C26E118000ECDFB /* RequestAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		D4CB3F221C259BD00070CB95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB3F211C259BD00070CB95 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4F745A81C64AD860077F3D0 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F745A71C64AD860077F3D0 /* LoginViewModelTest.swift */; settings = {ASSET_TAGS = (); }; };
+		D4F745AA1C64BE5E0077F3D0 /* LoginViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F745A91C64BE5E0077F3D0 /* LoginViewControllerUITest.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D47622261C6245F0008EEF42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D431C6A81C24372E00183DCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D431C6AF1C24372E00183DCA;
+			remoteInfo = FeedbackApp;
+		};
+		D4DE94FC1C63F92F003C7C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D431C6A81C24372E00183DCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D431C6AF1C24372E00183DCA;
+			remoteInfo = FeedbackApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B0E578356713C98B563A6938 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,12 +81,19 @@
 		D46B7A011C2EAFDB008825D0 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		D46B7A031C2EB103008825D0 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		D46B7A051C2EB935008825D0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		D476220B1C620EEE008EEF42 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		D47622211C6245F0008EEF42 /* FeedbackAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedbackAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D47622251C6245F0008EEF42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D49C7BB51C2DD04E00F55387 /* PreferencesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		D49C7BB71C2DF13200F55387 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D4B323E61C5FE99900E33882 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D4B540B61C2FEA7F0005C6CF /* DrawerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerManager.swift; sourceTree = "<group>"; };
 		D4B542851C26E118000ECDFB /* RequestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		D4CB3F211C259BD00070CB95 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D4DE94F71C63F92F003C7C5E /* FeedbackAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedbackAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DE94FB1C63F92F003C7C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F745A71C64AD860077F3D0 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		D4F745A91C64BE5E0077F3D0 /* LoginViewControllerUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITest.swift; sourceTree = "<group>"; };
 		E2EB01691F6D459ED5DBA1B3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E738AF098EE07D5D562B6A58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +104,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D85F526A3125A3EFECCEBF1 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476221E1C6245F0008EEF42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DE94F41C63F92F003C7C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D46A1E2E1C24AC24007EC022 /* RegisterViewController.swift */,
+				D476220B1C620EEE008EEF42 /* RegisterViewModel.swift */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -170,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				D431C6B21C24372E00183DCA /* FeedbackApp */,
+				D47622221C6245F0008EEF42 /* FeedbackAppTests */,
+				D4DE94F81C63F92F003C7C5E /* FeedbackAppUITests */,
 				D431C6B11C24372E00183DCA /* Products */,
 				6B6C245E326FF13A3BE7FAB6 /* Pods */,
 				3B824A8870C7DBFEA49D9FF3 /* Frameworks */,
@@ -180,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				D431C6B01C24372E00183DCA /* FeedbackApp.app */,
+				D47622211C6245F0008EEF42 /* FeedbackAppTests.xctest */,
+				D4DE94F71C63F92F003C7C5E /* FeedbackAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +238,7 @@
 				D4B542841C26E0FC000ECDFB /* Service */,
 				D43B322D1C261D9D0035399D /* Images */,
 				D43B322A1C2613390035399D /* Utils */,
+				D42E77621C2EC63B00C9AAC2 /* Feedback-Bridging-Header.h */,
 				D4045F2B1C61456400C6206B /* SupportingFiles */,
 				D431C6B71C24372E00183DCA /* Main.storyboard */,
 			);
@@ -203,7 +250,6 @@
 			children = (
 				D4B540B61C2FEA7F0005C6CF /* DrawerManager.swift */,
 				D49C7BB51C2DD04E00F55387 /* PreferencesManager.swift */,
-				D42E77621C2EC63B00C9AAC2 /* Feedback-Bridging-Header.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -220,6 +266,15 @@
 				D431C6C61C24386E00183DCA /* launchx2.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		D47622221C6245F0008EEF42 /* FeedbackAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D47622251C6245F0008EEF42 /* Info.plist */,
+				D4F745A71C64AD860077F3D0 /* LoginViewModelTest.swift */,
+			);
+			path = FeedbackAppTests;
 			sourceTree = "<group>";
 		};
 		D49C7BB21C2DCEE700F55387 /* Model */ = {
@@ -249,6 +304,15 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		D4DE94F81C63F92F003C7C5E /* FeedbackAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4DE94FB1C63F92F003C7C5E /* Info.plist */,
+				D4F745A91C64BE5E0077F3D0 /* LoginViewControllerUITest.swift */,
+			);
+			path = FeedbackAppUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,17 +336,62 @@
 			productReference = D431C6B01C24372E00183DCA /* FeedbackApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D47622201C6245F0008EEF42 /* FeedbackAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D47622281C6245F0008EEF42 /* Build configuration list for PBXNativeTarget "FeedbackAppTests" */;
+			buildPhases = (
+				D476221D1C6245F0008EEF42 /* Sources */,
+				D476221E1C6245F0008EEF42 /* Frameworks */,
+				D476221F1C6245F0008EEF42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D47622271C6245F0008EEF42 /* PBXTargetDependency */,
+			);
+			name = FeedbackAppTests;
+			productName = FeedbackAppTests;
+			productReference = D47622211C6245F0008EEF42 /* FeedbackAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D4DE94F61C63F92F003C7C5E /* FeedbackAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DE95001C63F92F003C7C5E /* Build configuration list for PBXNativeTarget "FeedbackAppUITests" */;
+			buildPhases = (
+				D4DE94F31C63F92F003C7C5E /* Sources */,
+				D4DE94F41C63F92F003C7C5E /* Frameworks */,
+				D4DE94F51C63F92F003C7C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4DE94FD1C63F92F003C7C5E /* PBXTargetDependency */,
+			);
+			name = FeedbackAppUITests;
+			productName = FeedbackAppUITests;
+			productReference = D4DE94F71C63F92F003C7C5E /* FeedbackAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D431C6A81C24372E00183DCA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Bozidar;
 				TargetAttributes = {
 					D431C6AF1C24372E00183DCA = {
 						CreatedOnToolsVersion = 7.0.1;
+					};
+					D47622201C6245F0008EEF42 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = D431C6AF1C24372E00183DCA;
+					};
+					D4DE94F61C63F92F003C7C5E = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = D431C6AF1C24372E00183DCA;
 					};
 				};
 			};
@@ -300,6 +409,8 @@
 			projectRoot = "";
 			targets = (
 				D431C6AF1C24372E00183DCA /* FeedbackApp */,
+				D47622201C6245F0008EEF42 /* FeedbackAppTests */,
+				D4DE94F61C63F92F003C7C5E /* FeedbackAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +430,20 @@
 				D431C6C81C24386E00183DCA /* launchx2.png in Resources */,
 				D417D2D31C2C5CD80047A159 /* foilogotest.jpg in Resources */,
 				D431C6B91C24372E00183DCA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476221F1C6245F0008EEF42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DE94F51C63F92F003C7C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +511,7 @@
 				D46B7A001C2EA292008825D0 /* MyProjectsTableViewController.swift in Sources */,
 				D4045F281C6128AD00C6206B /* ProjectsViewModel.swift in Sources */,
 				D4B323E71C5FE99900E33882 /* LoginViewModel.swift in Sources */,
+				D476220C1C620EEE008EEF42 /* RegisterViewModel.swift in Sources */,
 				D431C6B41C24372E00183DCA /* AppDelegate.swift in Sources */,
 				D4B542861C26E118000ECDFB /* RequestAPI.swift in Sources */,
 				D4118AD91C2733720052A389 /* CustomAlertView.swift in Sources */,
@@ -396,7 +522,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D476221D1C6245F0008EEF42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F745A81C64AD860077F3D0 /* LoginViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DE94F31C63F92F003C7C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F745AA1C64BE5E0077F3D0 /* LoginViewControllerUITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D47622271C6245F0008EEF42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D431C6AF1C24372E00183DCA /* FeedbackApp */;
+			targetProxy = D47622261C6245F0008EEF42 /* PBXContainerItemProxy */;
+		};
+		D4DE94FD1C63F92F003C7C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D431C6AF1C24372E00183DCA /* FeedbackApp */;
+			targetProxy = D4DE94FC1C63F92F003C7C5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D431C6B71C24372E00183DCA /* Main.storyboard */ = {
@@ -527,6 +682,60 @@
 			};
 			name = Release;
 		};
+		D47622291C6245F0008EEF42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FeedbackAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foi.bozidar.labas.FeedbackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeedbackApp.app/FeedbackApp";
+			};
+			name = Debug;
+		};
+		D476222A1C6245F0008EEF42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FeedbackAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foi.bozidar.labas.FeedbackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeedbackApp.app/FeedbackApp";
+			};
+			name = Release;
+		};
+		D4DE94FE1C63F92F003C7C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FeedbackAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foi.bozidar.labas.FeedbackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = FeedbackApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D4DE94FF1C63F92F003C7C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FeedbackAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foi.bozidar.labas.FeedbackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FeedbackApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,6 +753,24 @@
 			buildConfigurations = (
 				D431C6C31C24372E00183DCA /* Debug */,
 				D431C6C41C24372E00183DCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D47622281C6245F0008EEF42 /* Build configuration list for PBXNativeTarget "FeedbackAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47622291C6245F0008EEF42 /* Debug */,
+				D476222A1C6245F0008EEF42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4DE95001C63F92F003C7C5E /* Build configuration list for PBXNativeTarget "FeedbackAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DE94FE1C63F92F003C7C5E /* Debug */,
+				D4DE94FF1C63F92F003C7C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

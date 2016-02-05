@@ -6,7 +6,7 @@
 //  Copyright © 2016. Bozidar. All rights reserved.
 //
 
-import Foundation
+
 import SwiftyJSON
 import RxSwift
 import RxCocoa

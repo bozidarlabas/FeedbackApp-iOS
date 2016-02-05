@@ -18,31 +18,30 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
+    var viewModel = LoginViewModel()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //VIEWMODEL
-        let viewModel = LoginViewModel(username: txtUsername.rx_text.asObservable(), password: txtPassword.rx_text.asObservable())
+        viewModel = LoginViewModel()
+        viewModel.validate(txtUsername.rx_text.asObservable(), password: txtPassword.rx_text.asObservable())
         
         loginBtn.rx_tap
-            .withLatestFrom(viewModel.credentialsValid)
+            .withLatestFrom(viewModel.credentialsValid!)
             .subscribeNext{valid in
-                viewModel.login(self.txtUsername.text!, password: self.txtPassword.text!)
+                if(valid == true){self.viewModel.storeLogedUser()}
+                self.viewModel.login(self.txtUsername.text!, password: self.txtPassword.text!, onSuccesslogin: self.onSuccesslogin)
             }
             .addDisposableTo(disposeBag)
-        
-        viewModel.userLogged
-            .subscribeNext{
-                userLogged in self.onAuthenticationFinished(userLogged!, viewModel: viewModel)
-            }
-            .addDisposableTo(disposeBag)
+
         
     }
     
-    private func onAuthenticationFinished(valid: Bool, viewModel: LoginViewModel){
-        if(valid){
+    func onSuccesslogin(response: JSON)->Void{
+        if response == "success"{
             goToHomeScreen()
         }else{
             CustomAlertView.showAlertView("Login failed!", message: "Wrong username or password", buttonTitle: "OK")

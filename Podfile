@@ -10,4 +10,3 @@ use_frameworks!
 	pod 'MMDrawerController', '~> 0.5.7'
 	pod 'RxAlamofire'
 	pod 'Kingfisher', '~> 2.0'
-

@@ -47,19 +47,27 @@ class RequestAPI{
             "registration": "registration"
         ]
         
-        Alamofire.request(.POST, Constants.REGISTER, parameters: parameters)
-            .responseJSON(completionHandler: { response in
-                switch response.result{
-                case .Success:
-                    if let value = response.result.value{
-                        let json = JSON(value)
-                        withSuccess(json)
-                    }
+        Alamofire.request(.POST, Constants.REGISTER, parameters: parameters).rx_responseJSON()
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: {(r, json) -> Void in
+                    let jsonForValidation = JSON(json)
                     
-                case .Failure:
-                    print("error")
-                }
-            })
+                    if let error = jsonForValidation["message"].string{
+                        print("error: \(error)")
+                        self.postError("Error", message: error)
+                        return
+                    }
+                    withSuccess(jsonForValidation)
+                },
+                onError: {error in
+                    print("Error")
+                    let gotError = error as NSError
+                    print(gotError.domain)
+                    print(gotError.code)
+                    self.postError("\(gotError.code)", message: gotError.domain)}
+            )
+            .addDisposableTo(disposeBag)
     }
     
     //MARK: Login

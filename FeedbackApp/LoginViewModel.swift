@@ -12,19 +12,18 @@ import SwiftyJSON
 
 import Foundation
 
-class LoginViewModel{
+public class LoginViewModel{
     
-    var credentialsValid: Observable<Bool>
-    var userLogged = PublishSubject<Bool?>()
+    var credentialsValid = Observable<Bool>?()
+    public var userLogged = PublishSubject<Bool?>()
     
     //MODEL
-    var username: String?{
-        didSet{
-            
-        }
-    }
+    var username: String?
     
-    init(username: Observable<String>, password: Observable<String>){
+    
+    public init(){}
+    
+    func validate(username: Observable<String>, password: Observable<String>){
         let usernameValid = username
             .map{$0.utf8.count > 3}
         
@@ -32,28 +31,15 @@ class LoginViewModel{
             .map{$0.utf8.count > 3}
         
         credentialsValid = Observable.combineLatest(usernameValid, passwordValid){$0 && $1}
-        
+
     }
     
-    private func notifyViewController(authenticatedUser: Bool){
-        self.userLogged.on(.Next(authenticatedUser))
-    }
-    
-    func login(username: String, password: String){
+    public func login(username: String, password: String, onSuccesslogin: (JSON)->Void){
         self.username = username
         RequestAPI.sharedInstance.login(username, password: password, withSuccess: onSuccesslogin)
     }
     
-    func onSuccesslogin(json: JSON)->Void{
-        if json == "success"{
-            notifyViewController(true)
-            storeLogedUser()
-        }else{
-            notifyViewController(false)
-        }
-    }
-    
-    func storeLogedUser(){
+    public func storeLogedUser(){
         let preferenceManager: PreferencesManager = PreferencesManager()
         preferenceManager.storeUser(username!)
     }

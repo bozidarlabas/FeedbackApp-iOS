@@ -710,9 +710,6 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="register:" destination="GAf-2S-2vw" eventType="touchUpInside" id="YcR-OP-9eD"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWB-rK-dqE">
                                 <rect key="frame" x="20" y="489" width="560" height="30"/>
@@ -835,6 +832,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="btnRegister" destination="6dH-tE-X05" id="FPy-7l-R1h"/>
                         <outlet property="txtCity" destination="Jwc-qK-ZPH" id="v5s-0m-Cv0"/>
                         <outlet property="txtCountry" destination="2m2-Fk-Wer" id="Gfk-oo-p88"/>
                         <outlet property="txtEmail" destination="J63-47-4dv" id="qXU-Ix-EPV"/>

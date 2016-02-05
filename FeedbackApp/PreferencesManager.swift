@@ -18,7 +18,8 @@ class PreferencesManager{
     func storeUser(username: String){
         let preferences = NSUserDefaults.standardUserDefaults()
         preferences.setObject(username, forKey: UserKeys.USERNAME)
-        preferences.synchronize()    }
+        preferences.synchronize()
+    }
     
     func loadUser()->String{
         let preferences = NSUserDefaults.standardUserDefaults()
