@@ -11,7 +11,7 @@ import UIKit
 class ProjectsListCell: UITableViewCell {
 
     @IBOutlet weak var leftImage: UIImageView!
-    @IBOutlet weak var confirmImage: UIImageView!
+    @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var labelProjecName: UILabel!
     
     override func awakeFromNib() {

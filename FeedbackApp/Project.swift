@@ -22,7 +22,7 @@ class Project{
             for item in projectsArray{
                 let projectItem = (
                     status: item["status"].string,
-                    idProjects: item["idProjects"].string,
+                    idProjects: item["idprojects"].string,
                     name: item["name"].string,
                     description: item["description"].string,
                     rating: item["rating"].int

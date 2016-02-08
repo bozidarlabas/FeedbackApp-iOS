@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JLToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KCFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FF16F20157D341BB48C0632E25322C8</key>
+		<key>37414A2DB5F43A63F5688AED385B35E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57F86AAF78FC1686C16F06E9539017B7</key>
+		<key>54F9BCE3BC06EE5DB51B5D4C8A836383</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6313D8966F522D02E4866E8C2DF31366</key>
+		<key>7CD483F08A2AC430A4F47E66B4025664</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DD69BF347D720812784A09D8774E383</key>
+		<key>892FE5BFDD0FD8B38E22D76135459FE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B32CEAD694AC845E46EDCDBAACCF2C4B</key>
+		<key>9F8DDBB615D2DF47772E26D7D989E94F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E351F8BDDE7C83C1F16F53CBCB8EB89F</key>
+		<key>EAD4DAC10B6117A6B27C23F1BA4DF2D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F854DB8B56844854A480AFB2C8B2F7E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAE1089CC20740C30C502666EAF85329</key>
 		<dict>
 			<key>primary</key>
 			<true/>

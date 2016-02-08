@@ -24,6 +24,7 @@ class ProjectsViewModel{
     var username: String?{
         didSet{
             if username != nil{
+                
                 fetchAllProjects()
             }
         }
@@ -57,4 +58,19 @@ class ProjectsViewModel{
         let preferenceManager: PreferencesManager = PreferencesManager()
         return preferenceManager.loadUser()
     }
+    
+    func removeProjectFromAllProjectsList(projectId: Int){
+        
+       project?.projectsModel = (project?.projectsModel.filter { (project : ProjectModel) -> Bool in
+            return project.idProjects != "\(projectId)"
+        })!
+        
+        notifyViewController()
+    }
+    
+    func addProject(projectModel: ProjectModel){
+        project?.projectsModel.append(projectModel)
+        notifyViewController()
+    }
+    
 }

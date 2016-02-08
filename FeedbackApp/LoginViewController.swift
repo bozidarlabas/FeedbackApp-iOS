@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
         loginBtn.rx_tap
             .withLatestFrom(viewModel.credentialsValid!)
             .subscribeNext{valid in
-                if(valid == true){self.viewModel.storeLogedUser()}
                 self.viewModel.login(self.txtUsername.text!, password: self.txtPassword.text!, onSuccesslogin: self.onSuccesslogin)
+                if(valid == true){self.viewModel.storeLogedUser()}
             }
             .addDisposableTo(disposeBag)
 

@@ -8,8 +8,9 @@
 
 import UIKit
 import MMDrawerController
+import KCFloatingActionButton
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeViewProtocol {
 
     //OUTLETS
     @IBOutlet weak var navButton1: UIButton!
@@ -21,10 +22,21 @@ class HomeViewController: UIViewController {
     
     //PROPERTIES
     let numberOfScreens: CGFloat = 2
+    var myProjectsController: MyProjectsTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        initFloatingActionButton()
+    }
+    
+    func initFloatingActionButton(){
+        let fab = KCFloatingActionButton()
+        fab.plusColor = UIColor.whiteColor()
+        fab.buttonColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 243.0/255.0, alpha: 1.0)
+        fab.addItem(title: "Public projects")
+        fab.addItem(title: "Private projects")
+        self.view.addSubview(fab)
     }
     
     func initUI(){
@@ -38,6 +50,11 @@ class HomeViewController: UIViewController {
         setTabControllers()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 243.0/255.0, alpha: 1.0)
+    }
+    
     @IBAction func showAllProjects() {
         scrollViewController.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
@@ -49,18 +66,26 @@ class HomeViewController: UIViewController {
     func setTabControllers(){
         let width = self.view.frame.size.width
         let allProjectsController: AllProjectsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AllProjects") as! AllProjectsTableViewController
-        let myProjectsController: MyProjectsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyProjects") as! MyProjectsTableViewController
+        allProjectsController.setHomeProtocol(self)
+        myProjectsController = self.storyboard?.instantiateViewControllerWithIdentifier("MyProjects") as? MyProjectsTableViewController
+
         allProjectsController.view.frame = CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height)
-        myProjectsController.view.frame = CGRect(x: width, y: 0, width: width, height: self.view.frame.size.height)
+        myProjectsController!.view.frame = CGRect(x: width, y: 0, width: width, height: self.view.frame.size.height)
         
         self.addChildViewController(allProjectsController)
-        self.addChildViewController(myProjectsController)
+        self.addChildViewController(myProjectsController!)
         
         self.scrollViewContent.addSubview(allProjectsController.view)
-        self.scrollViewContent.addSubview(myProjectsController.view)
+        self.scrollViewContent.addSubview(myProjectsController!.view)
     }
 
     @IBAction func openDrawer(sender: UIBarButtonItem) {
         self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
+    
+    func addProjectToMyProjects(projectModel: ProjectModel)->Void{
+        print("clicked: \(projectModel.idProjects)")
+        myProjectsController!.addProject(projectModel)
+    }
 }
+

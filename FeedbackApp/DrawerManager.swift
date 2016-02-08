@@ -12,14 +12,14 @@ import MMDrawerController
 //Facade Design Pattern
 class DrawerManager{
     
-    private var centerViewController: CustomNavigationController?
+    private var centerViewController: UINavigationController?
     private var leftViewController: DrawerController?
     private var drawerController: MMDrawerController?
     
    
     func initializeControllers(storyBoard: UIStoryboard){
         
-        centerViewController = storyBoard.instantiateViewControllerWithIdentifier("NavHomeViewController") as? CustomNavigationController
+        centerViewController = storyBoard.instantiateViewControllerWithIdentifier("NavHomeViewController") as? UINavigationController
         
         leftViewController = storyBoard.instantiateViewControllerWithIdentifier("LeftSideViewController") as? DrawerController
     }
