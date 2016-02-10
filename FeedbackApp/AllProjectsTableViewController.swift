@@ -11,6 +11,7 @@ import SwiftyJSON
 import RxCocoa
 import RxSwift
 import JLToast
+import KCFloatingActionButton
 
 
 class AllProjectsTableViewController: UITableViewController {
@@ -32,6 +33,7 @@ class AllProjectsTableViewController: UITableViewController {
         }.addDisposableTo(disposeBag)
         
         self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     func setHomeProtocol(homeController: HomeViewProtocol){

@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         let drawerManager = DrawerManager()
         drawerManager.initializeControllers(self.storyboard!)
         drawerManager.setUpDrawer()
+        //let tabbarctr: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabbarctr") as! HomeViewController
         self.presentViewController(drawerManager.getDrawerController(), animated: true, completion: nil)
     }
     

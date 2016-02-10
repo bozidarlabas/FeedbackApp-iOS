@@ -14,6 +14,7 @@
 		D4118AD91C2733720052A389 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4118AD81C2733720052A389 /* CustomAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		D417D2D51C2C5D550047A159 /* AllProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417D2D41C2C5D550047A159 /* AllProjectsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D417D2D81C2C606B0047A159 /* ProjectsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417D2D71C2C606B0047A159 /* ProjectsListCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D42CE9971C6B456700D58114 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CE9961C6B456700D58114 /* FeedbackViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D431C6B41C24372E00183DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D431C6B31C24372E00183DCA /* AppDelegate.swift */; };
 		D431C6B91C24372E00183DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D431C6B71C24372E00183DCA /* Main.storyboard */; };
 		D431C6BE1C24372E00183DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D431C6BC1C24372E00183DCA /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		D4118AD81C2733720052A389 /* CustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		D417D2D41C2C5D550047A159 /* AllProjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllProjectsTableViewController.swift; sourceTree = "<group>"; };
 		D417D2D71C2C606B0047A159 /* ProjectsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListCell.swift; sourceTree = "<group>"; };
+		D42CE9961C6B456700D58114 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		D42E77621C2EC63B00C9AAC2 /* Feedback-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Feedback-Bridging-Header.h"; sourceTree = "<group>"; };
 		D431C6B01C24372E00183DCA /* FeedbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D431C6B31C24372E00183DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		D42CE9951C6B454900D58114 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D42CE9961C6B456700D58114 /* FeedbackViewController.swift */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
 		D431C6A71C24372E00183DCA = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +278,7 @@
 		D4B323E31C5FE94B00E33882 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D42CE9951C6B454900D58114 /* Feedback */,
 				D4045F2A1C61451200C6206B /* Register */,
 				D4045F291C61450800C6206B /* Drawer */,
 				D4045F261C60E78700C6206B /* Home */,
@@ -478,6 +489,7 @@
 				D49C7BB61C2DD04E00F55387 /* PreferencesManager.swift in Sources */,
 				D43B32291C25FEFB0035399D /* HomeViewController.swift in Sources */,
 				D4CB3F221C259BD00070CB95 /* LoginViewController.swift in Sources */,
+				D42CE9971C6B456700D58114 /* FeedbackViewController.swift in Sources */,
 				D46A1E2F1C24AC24007EC022 /* RegisterViewController.swift in Sources */,
 				D49C7BB81C2DF13200F55387 /* Project.swift in Sources */,
 				D417D2D51C2C5D550047A159 /* AllProjectsTableViewController.swift in Sources */,

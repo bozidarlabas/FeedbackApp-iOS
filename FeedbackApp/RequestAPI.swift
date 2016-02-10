@@ -33,6 +33,8 @@ class RequestAPI{
         static let LOGIN: String = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/login.php"
         static let FETCH_ALL_PROJECTS = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
         static let FETCH_MY_PROJECTS = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
+        static let STORE_NEW_PROJECT = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
+        static let FETCH_MY_PRIVATE_PROJECTS = "\(ENDPOINT)/WebDiP/2013_projekti/WebDiP2013_038/projects.php"
     }
     
     func register(username: String, password: String, email: String, city: String, country: String, withSuccess: ((JSON)->Void)){
@@ -120,6 +122,7 @@ class RequestAPI{
                         self.postError("Error", message: error)
                         return
                     }
+                    print("aaa> \(jsonResponse)")
                     withSuccess(jsonResponse)
                 },
                 onError: {error in
@@ -170,6 +173,64 @@ class RequestAPI{
                 title: title,
                 message: message,
                 preferredStyle: .Alert)))
+    }
+    
+    func addNewProject(username: String, projectId: String){
+        let parameters = [
+            "addproject" : "addproject",
+            "username" : username,
+            "projectid" : projectId
+        ]
+        
+        Alamofire.request(.POST, Constants.STORE_NEW_PROJECT, parameters: parameters).rx_responseJSON()
+        .subscribe(
+            onNext: {(r,json) -> Void in
+                let jsonResponse = JSON(json)
+                
+                if let error = jsonResponse["message"].string{
+                    print("error: \(error)")
+                    self.postError("Error", message: error)
+                    return
+                }
+            },
+            onError: {error in
+                print("Error")
+                let gotError = error as NSError
+                print(gotError.domain)
+                print(gotError.code)
+                self.postError("\(gotError.code)", message: gotError.domain)}
+            
+            ).addDisposableTo(disposeBag)
+        
+    }
+    
+    func fetchPrivateProjects(username: String, withSuccess: ((JSON)->Void)){
+        let parameters = [
+            "privateprojects" : "privateprojects",
+            "username" : username
+        ]
+        
+        Alamofire.request(.POST, Constants.STORE_NEW_PROJECT, parameters: parameters).rx_responseJSON()
+            .subscribe(
+                onNext: {(r,json) -> Void in
+                    let jsonResponse = JSON(json)
+                    
+                    if let error = jsonResponse["message"].string{
+                        print("error: \(error)")
+                        self.postError("Error", message: error)
+                        return
+                    }
+                    withSuccess(jsonResponse)
+                },
+                onError: {error in
+                    print("Error")
+                    let gotError = error as NSError
+                    print(gotError.domain)
+                    print(gotError.code)
+                    self.postError("\(gotError.code)", message: gotError.domain)}
+                
+            ).addDisposableTo(disposeBag)
+        
     }
     
     

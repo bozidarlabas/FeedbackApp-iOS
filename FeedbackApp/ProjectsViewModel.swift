@@ -69,8 +69,23 @@ class ProjectsViewModel{
     }
     
     func addProject(projectModel: ProjectModel){
+        RequestAPI.sharedInstance.addNewProject(username!, projectId: projectModel.idProjects!)
         project?.projectsModel.append(projectModel)
         notifyViewController()
+    }
+    
+    func showPrivateProjects(){
+        print("fetch")
+        RequestAPI.sharedInstance.fetchPrivateProjects(username!, withSuccess: onMyProjectsFetched)
+        notifyViewController()
+    }
+    
+    func showPublicProjects(){
+        
+    }
+    
+    func showAllProjects(){
+        
     }
     
 }
